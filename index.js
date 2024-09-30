@@ -30,7 +30,7 @@ const questionRoute = require("./Routes/questionRoute");
 mongoose
   .connect(process.env.DB_URL)
   .then((con) => {
-    // console.log(`Mogoose Host :${con.connection.host}`);
+    console.log(`Mogoose Host :${con.connection.host}`);
   })
   .catch(() => console.log(`Server is not connected to MongoDB...`));
 

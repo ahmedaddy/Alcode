@@ -26,8 +26,8 @@ exports.deleteOne = (Model) =>
 
     const oldImage = document.questionImage;
     const oldAudio = document.audio;
-    console.log(oldImage);
-    console.log(oldAudio);
+    // console.log(oldImage);
+    // console.log(oldAudio);
 
     // If the old image is a URL, convert it to a file path
     const oldImagePath = oldImage
@@ -48,12 +48,12 @@ exports.deleteOne = (Model) =>
     if (oldImagePath) {
       try {
         // Log the path to ensure it is correct
-        console.log(`Attempting to delete old image at path: ${oldImagePath}`);
+        // console.log(`Attempting to delete old image at path: ${oldImagePath}`);
 
         // Ensure the file exists before attempting to delete
         if (fs.existsSync(oldImagePath)) {
           await deleteImage(oldImagePath);
-          console.log(`Old image ${oldImage} deleted successfully`);
+          // console.log(`Old image ${oldImage} deleted successfully`);
         } else {
           console.warn(
             `Old image ${oldImage} not found at path ${oldImagePath}`
@@ -67,12 +67,12 @@ exports.deleteOne = (Model) =>
     if (oldAudioPath) {
       try {
         // Log the path to ensure it is correct
-        console.log(`Attempting to delete old audio at path: ${oldAudioPath}`);
+        // console.log(`Attempting to delete old audio at path: ${oldAudioPath}`);
 
         // Ensure the file exists before attempting to delete
         if (fs.existsSync(oldAudioPath)) {
           await deleteImage(oldAudioPath);
-          console.log(`Old audio ${oldAudio} deleted successfully`);
+          // console.log(`Old audio ${oldAudio} deleted successfully`);
         } else {
           console.warn(
             `Old audio ${oldAudio} not found at path ${oldAudioPath}`
@@ -130,14 +130,14 @@ exports.updateOne = (Model) =>
       if (oldImagePath && oldImagePath !== newImage) {
         try {
           // Log the path to ensure it is correct
-          console.log(
-            `Attempting to delete old image at path: ${oldImagePath}`
-          );
+          // console.log(
+          //   `Attempting to delete old image at path: ${oldImagePath}`
+          // );
 
           // Ensure the file exists before attempting to delete
           if (fs.existsSync(oldImagePath)) {
             await deleteImage(oldImagePath);
-            console.log(`Old image ${oldImage} deleted successfully`);
+            // console.log(`Old image ${oldImage} deleted successfully`);
           } else {
             console.warn(
               `Old image ${oldImage} not found at path ${oldImagePath}`
@@ -155,14 +155,14 @@ exports.updateOne = (Model) =>
       if (oldAudioPath && oldAudioPath !== newAudio) {
         try {
           // Log the path to ensure it is correct
-          console.log(
-            `Attempting to delete old audio at path: ${oldAudioPath}`
-          );
+          // console.log(
+          //   `Attempting to delete old audio at path: ${oldAudioPath}`
+          // );
 
           // Ensure the file exists before attempting to delete
           if (fs.existsSync(oldAudioPath)) {
             await deleteImage(oldAudioPath);
-            console.log(`Old audio ${oldAudio} deleted successfully`);
+            // console.log(`Old audio ${oldAudio} deleted successfully`);
           } else {
             console.warn(
               `Old audio ${oldAudio} not found at path ${oldAudioPath}`
