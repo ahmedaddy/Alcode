@@ -20,10 +20,10 @@ const router = express.Router();
 
 const authcontroller = require("../controllers/authcontroller");
 
-router.use(authcontroller.protect, authcontroller.allowedTo("admin"));
-
 router.route("/register").post(signupValidator, register);
 router.route("/login").post(loginValidator, login);
+
+// router.use(authcontroller.protect, authcontroller.allowedTo("admin"));
 
 router.route("/getMe").get(authcontroller.protect, getLoggedUserData, getUser);
 
