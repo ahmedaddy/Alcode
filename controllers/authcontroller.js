@@ -35,7 +35,6 @@ exports.register = asyncHandler(async (req, res, next) => {
 exports.login = asyncHandler(async (req, res, next) => {
   // 1) check if password and email in the body
   const user = await userModel.findOne({ email: req.body.email });
-  console.log("ds");
 
   // 2) check user exiset & chech if password if correct
   if (!user || !(await bcrypt.compare(req.body.password, user.password))) {
